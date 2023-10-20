@@ -4,6 +4,7 @@
   "description": "Vue 3 Quasar Supabase project",
   "productName": "Estoque Quasar",
   "author": "soareslss <soareslssa@fab.mil.br>",
+  "supabase": "fRpeyVJN2SM0Swr6",
   "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.vue ./",
@@ -13,8 +14,9 @@
     "build": "quasar build"
   },
   "dependencies": {
-    "axios": "^1.2.1",
     "@quasar/extras": "^1.16.4",
+    "@supabase/supabase-js": "^2.38.2",
+    "axios": "^1.2.1",
     "quasar": "^2.6.0",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0"
