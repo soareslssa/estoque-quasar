@@ -7,13 +7,16 @@ export default function useAuthUser() {
   const { supabase } = useSupabase();
 
   const login = async ({ email, password }) => {
-    const { user, error } = await supabase.auth.signIn({ email, password });
+    const { user, error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
     if (error) throw error;
     return user;
   };
 
   const loginWithSocialProvider = async (provider) => {
-    const { user, error } = await supabase.auth.signIn({ provider});
+    const { user, error } = await supabase.auth.signIn({ provider });
     if (error) throw error;
     return user;
   };
@@ -40,14 +43,14 @@ export default function useAuthUser() {
     return user;
   };
   const update = async (data) => {
-    const { user, error } = await supabase.auth.update(data)
-    if(error) throw error
-    return user
+    const { user, error } = await supabase.auth.update(data);
+    if (error) throw error;
+    return user;
   };
   const sendPasswordRestEmail = async (email) => {
-    const { user, error } = await supabase.auth.resetPasswordForEmail(email)
-    if(error) throw error
-    return user
+    const { user, error } = await supabase.auth.resetPasswordForEmail(email);
+    if (error) throw error;
+    return user;
   };
 
   return {
