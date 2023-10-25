@@ -11,6 +11,10 @@ const routes = [
       { path: "", component: () => import("pages/Login.vue") },
       { path: "login", component: () => import("pages/Login.vue") },
       { path: "register", component: () => import("pages/Register.vue") },
+      {
+        path: "email-confirmation",
+        component: () => import("pages/EmailConfirmation.vue"),
+      },
     ],
   },
   {
