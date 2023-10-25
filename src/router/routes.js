@@ -15,6 +15,7 @@ const routes = [
         path: "email-confirmation",
         component: () => import("pages/EmailConfirmation.vue"),
       },
+      { path: "me", component: () => import("pages/Me.vue") },
     ],
   },
   {
