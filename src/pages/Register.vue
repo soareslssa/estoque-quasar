@@ -44,7 +44,7 @@ export default defineComponent({
       try {
         await register(form.value);
         router.push({
-          name: "email-confirmation",
+          path: "/email-confirmation",
           query: { email: form.value.email },
         });
       } catch (error) {
