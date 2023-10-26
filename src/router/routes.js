@@ -2,7 +2,7 @@ const routes = [
   {
     path: "/",
     component: () => import("layouts/MainLayout.vue"),
-    children: [{ path: "", component: () => import("pages/IndexPage.vue") }],
+    children: [{ path: "me", component: () => import("pages/Me.vue") }],
   },
   {
     path: "/",
@@ -15,7 +15,6 @@ const routes = [
         path: "email-confirmation",
         component: () => import("pages/EmailConfirmation.vue"),
       },
-      { path: "me", component: () => import("pages/Me.vue") },
     ],
   },
   {
