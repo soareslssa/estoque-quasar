@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { defineComponent, ref } from "vue";
+import { defineComponent } from "vue";
 import useAuthUser from "src/composable/UseAuthUser";
 
 export default defineComponent({
@@ -13,7 +13,6 @@ export default defineComponent({
 
   setup() {
     const { user } = useAuthUser();
-
     return { user };
   },
 });
