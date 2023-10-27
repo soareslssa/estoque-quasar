@@ -47,6 +47,10 @@ export default defineComponent({
       }).onOk(async () => {
         await logout();
         router.replace({ path: "login" });
+        $q.notify({
+          message: "Logout successfully",
+          type: "positive",
+        });
       });
     };
     return { handleLogout };
