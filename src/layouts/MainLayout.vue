@@ -4,9 +4,16 @@
       <q-toolbar>
         <q-toolbar-title> Estoque Quasar </q-toolbar-title>
 
-        <div class="q-gutter-x-sm">
-          <q-btn icon="login" label="sign in" flat to="login" />
-          <q-btn label="sign up" outline rounded to="register" />
+        <div>
+          <q-btn-dropdown color="white" flat icon="person">
+            <q-list>
+              <q-item clickable v-close-popup @click="handleLogout">
+                <q-item-section>
+                  <q-item-label>Logout</q-item-label>
+                </q-item-section>
+              </q-item>
+            </q-list>
+          </q-btn-dropdown>
         </div>
       </q-toolbar>
     </q-header>
@@ -19,14 +26,30 @@
 
 <script>
 import { defineComponent } from "vue";
-
-const linksList = [];
+import useAuthUser from "src/composable/UseAuthUser";
+import { useRouter } from "vue-router";
+import { useQuasar } from "quasar";
 
 export default defineComponent({
   name: "MainLayout",
 
   setup() {
-    return {};
+    const { logout } = useAuthUser();
+    const router = useRouter();
+    const $q = useQuasar();
+
+    const handleLogout = async () => {
+      $q.dialog({
+        title: "Logout",
+        message: "Do you really want to leave ?",
+        cancel: true,
+        persistent: true,
+      }).onOk(async () => {
+        await logout();
+        router.replace({ path: "login" });
+      });
+    };
+    return { handleLogout };
   },
 });
 </script>
