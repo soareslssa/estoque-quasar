@@ -2,7 +2,7 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
-        <q-btn flat round dense icon="menu" />
+        <q-btn flat round dense icon="fa-solid fa-bars" />
         <q-avatar>
           <img src="/public/icons/lendsclub-256x256.png" />
         </q-avatar>

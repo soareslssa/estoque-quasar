@@ -36,14 +36,14 @@ module.exports = configure(function (/* ctx */) {
     extras: [
       // 'ionicons-v4',
       // 'mdi-v5',
-      // 'fontawesome-v6',
+      "fontawesome-v6",
       // 'eva-icons',
       // 'themify',
       // 'line-awesome',
       // 'roboto-font-latin-ext', // this or either 'roboto-font', NEVER both!
 
       "roboto-font", // optional, you are not bound to it
-      "material-icons", // optional, you are not bound to it
+      //   "material-icons", // optional, you are not bound to it
     ],
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#build
@@ -88,8 +88,8 @@ module.exports = configure(function (/* ctx */) {
       config: {
         brand: {
           primary: "#000000",
-          secondary: "#26A69A",
-          accent: "#9C27B0",
+          secondary: "#f4b30d",
+          accent: "#d20e1e",
 
           dark: "#1d1d1d",
           "dark-page": "#121212",
