@@ -8,8 +8,8 @@
         </q-avatar>
         <q-toolbar-title class="desktop-only"> Lends Club </q-toolbar-title>
 
-        <div>
-          <q-btn flat round dense icon="search" class="desktop-only" />
+        <div class="q-ml-auto">
+          <q-btn flat round dense icon="fa-solid fa-search" />
         </div>
         <div class="q-pa-sm desktop-only">
           <q-btn flat label="Alugue Já" />
