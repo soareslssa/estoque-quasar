@@ -2,18 +2,19 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
-        <q-toolbar-title> Estoque Quasar </q-toolbar-title>
+        <q-btn flat round dense icon="menu" />
+        <q-avatar>
+          <img src="/public/icons/lendsclub-256x256.png" />
+        </q-avatar>
+        <q-toolbar-title class="desktop-only"> Lends Club </q-toolbar-title>
 
         <div>
-          <q-btn-dropdown color="white" flat icon="person">
-            <q-list>
-              <q-item clickable v-close-popup @click="handleLogout">
-                <q-item-section>
-                  <q-item-label>Logout</q-item-label>
-                </q-item-section>
-              </q-item>
-            </q-list>
-          </q-btn-dropdown>
+          <q-btn flat round dense icon="search" class="desktop-only" />
+        </div>
+        <div class="q-pa-sm desktop-only">
+          <q-btn flat label="Alugue Já" />
+          <q-btn flat label="Saiba Mais" />
+          <q-btn flat label="Login" />
         </div>
       </q-toolbar>
     </q-header>
