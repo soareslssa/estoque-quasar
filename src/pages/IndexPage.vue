@@ -1,11 +1,19 @@
 <template>
   <div class="q-pa-md">
-    <div class="q-pa-md"></div>
-    <div>
-      <boardgame-card :boardgame="this.mostPlayed" />
+    <div class="q-pa-md">
+      <q-chip
+        v-for="(categoria, i) in categorias"
+        :key="i"
+        outline
+        size="sm"
+        color="white"
+        >{{ categoria }}</q-chip
+      >
     </div>
 
-    <q-space />
+    <boardgame-card :boardgame="this.mostPlayed" />
+
+    <br />
 
     <div>
       <carousel-boardgames :boardgames="games" :title="popularTitle" />
@@ -40,6 +48,7 @@ export default defineComponent({
       mostPlayed,
       popularTitle,
       parecidosCatanTitle,
+      categorias: ["Festivo", "Miniaturas", "Jogo de Cartas", "Estratégia"],
     };
   },
   methods: {
