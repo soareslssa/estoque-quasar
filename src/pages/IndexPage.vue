@@ -1,19 +1,16 @@
 <template>
-  <div>
-    <div class="q-pa-md">
-      <q-card v-if="this.mostPlayed" bordered>
-        <q-img :src="this.mostPlayed.image" :fit="cover" />
-        <div class="absolute-bottom text-center q-pa-md q-gutter-md">
-          <q-btn color="secondary" icon="fa-solid fa-play" label="Alugar" />
-          <q-btn color="primary" icon="fa-solid fa-plus" label="Minha lista" />
-        </div>
-      </q-card>
+  <div class="q-pa-md">
+    <div class="q-pa-md"></div>
+    <div>
+      <boardgame-card :boardgame="this.mostPlayed" />
     </div>
 
     <q-space />
 
-    <div class="q-pa-md">
+    <div>
       <carousel-boardgames :boardgames="games" :title="popularTitle" />
+      <carousel-boardgames :boardgames="games" :title="parecidosCatanTitle" />
+      <carousel-boardgames :boardgames="games" :title="parecidosCatanTitle" />
       <carousel-boardgames :boardgames="games" :title="parecidosCatanTitle" />
     </div>
   </div>
@@ -24,11 +21,13 @@ import { defineComponent, ref } from "vue";
 import CarouselBoardgames from "src/components/CarouselBoardgames.vue";
 
 import axios from "axios";
+import BoardgameCard from "src/components/BoardgameCard.vue";
 
 export default defineComponent({
   name: "IndexPage",
   components: {
     CarouselBoardgames,
+    BoardgameCard,
   },
   setup() {
     let games = ref([]);
